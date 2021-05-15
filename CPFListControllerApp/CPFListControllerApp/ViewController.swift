@@ -163,9 +163,9 @@ class ViewController: UIViewController {
             .didEndZooming { (_, _, _) in
                 print("collection didEndZooming")
             }
-            .adjustedContentInsetChanged { (_) in
-                print("collection adjustedContentInsetChanged")
-            }
+//            .adjustedContentInsetChanged { (_) in
+//                print("collection adjustedContentInsetChanged")
+//            }
 
         
         let tableView = UITableView()
@@ -291,9 +291,9 @@ class ViewController: UIViewController {
             .didEndZooming { (_, _, _) in
                 print("table didEndZooming")
             }
-            .adjustedContentInsetChanged { (_) in
-                print("table adjustedContentInsetChanged")
-            }
+//            .adjustedContentInsetChanged { (_) in
+//                print("table adjustedContentInsetChanged")
+//            }
 
     }
 }

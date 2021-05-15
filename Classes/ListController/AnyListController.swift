@@ -328,8 +328,8 @@ extension AnyListController where ListView: UIScrollView {
         target(of: .scrollable, with: AnyScrollableTarget.self)?.didEndZooming = closour
     }
     
-    @available(iOS 11, *)
-    func adjustedContentInsetChanged(with closour: @escaping (UIScrollView) -> Void) {
-        target(of: .scrollable, with: AnyScrollableTarget.self)?.adjustedContentInsetChanged = closour
-    }
+//    @available(iOS 11, *)
+//    func adjustedContentInsetChanged(with closour: @escaping (UIScrollView) -> Void) {
+//        target(of: .scrollable, with: AnyScrollableTarget.self)?.adjustedContentInsetChanged = closour
+//    }
 }

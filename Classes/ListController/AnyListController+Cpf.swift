@@ -371,12 +371,12 @@ public extension Cpf where Base: AnyListController, Base.ListView: UIScrollView 
         return self
     }
     
-    @discardableResult
-    @available(iOS 11, *)
-    func adjustedContentInsetChanged(_ closour: @escaping (UIScrollView) -> Void) -> Self {
-        base.adjustedContentInsetChanged(with: closour)
-        return self
-    }
+//    @discardableResult
+//    @available(iOS 11, *)
+//    func adjustedContentInsetChanged(_ closour: @escaping (UIScrollView) -> Void) -> Self {
+//        base.adjustedContentInsetChanged(with: closour)
+//        return self
+//    }
 }
 
 extension NSProxy: CpfCompatible {}
