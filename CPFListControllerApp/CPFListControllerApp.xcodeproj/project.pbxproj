@@ -154,6 +154,7 @@
 			isa = PBXGroup;
 			children = (
 				93B48831264FBB370065E9FE /* CPFListController.podspec */,
+				93B487E7264FBB270065E9FE /* Classes */,
 				93B487B0264FB7EB0065E9FE /* CPFListControllerApp */,
 				93B487C7264FB7EF0065E9FE /* CPFListControllerAppTests */,
 				93B487D2264FB7EF0065E9FE /* CPFListControllerAppUITests */,
@@ -179,7 +180,6 @@
 				93B487B1264FB7EB0065E9FE /* AppDelegate.swift */,
 				93B487B3264FB7EB0065E9FE /* SceneDelegate.swift */,
 				93B487B5264FB7EB0065E9FE /* ViewController.swift */,
-				93B487E7264FBB270065E9FE /* Classes */,
 				93B487B7264FB7EB0065E9FE /* Main.storyboard */,
 				93B487BA264FB7EE0065E9FE /* Assets.xcassets */,
 				93B487BC264FB7EE0065E9FE /* LaunchScreen.storyboard */,
@@ -213,7 +213,7 @@
 				93B487E8264FBB270065E9FE /* ListController */,
 			);
 			name = Classes;
-			path = ../../Classes;
+			path = ../Classes;
 			sourceTree = "<group>";
 		};
 		93B487E8264FBB270065E9FE /* ListController */ = {
