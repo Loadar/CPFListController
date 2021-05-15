@@ -11,4 +11,6 @@ Pod::Spec.new do |s|
   s.source_files = 'Classes/**/*.{h,m,swift}'
   s.requires_arc = true
   s.dependency 'CPFChain'
+  
+  s.swift_version = '5.0'
 end

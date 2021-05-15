@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import CPFChain
 
 // MARK: - Base
 public extension Cpf where Base: AnyListController {
@@ -377,3 +378,5 @@ public extension Cpf where Base: AnyListController, Base.ListView: UIScrollView 
         return self
     }
 }
+
+extension NSProxy: CpfCompatible {}

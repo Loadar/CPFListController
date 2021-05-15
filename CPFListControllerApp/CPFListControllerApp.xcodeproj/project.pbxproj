@@ -3,10 +3,11 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1D7D967A6C7BCDA41BC1396A /* Pods_CPFListControllerApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E7AAC6298BB08FE34512727 /* Pods_CPFListControllerApp.framework */; };
 		93B487B2264FB7EB0065E9FE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93B487B1264FB7EB0065E9FE /* AppDelegate.swift */; };
 		93B487B4264FB7EB0065E9FE /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93B487B3264FB7EB0065E9FE /* SceneDelegate.swift */; };
 		93B487B6264FB7EB0065E9FE /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93B487B5264FB7EB0065E9FE /* ViewController.swift */; };
@@ -55,6 +56,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		2983A2C256BD46CC3883C06A /* Pods-CPFListControllerApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CPFListControllerApp.release.xcconfig"; path = "Target Support Files/Pods-CPFListControllerApp/Pods-CPFListControllerApp.release.xcconfig"; sourceTree = "<group>"; };
+		7E7AAC6298BB08FE34512727 /* Pods_CPFListControllerApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CPFListControllerApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		93B487AE264FB7EB0065E9FE /* CPFListControllerApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CPFListControllerApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		93B487B1264FB7EB0065E9FE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		93B487B3264FB7EB0065E9FE /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -109,6 +112,8 @@
 		93B48818264FBB270065E9FE /* TableListController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableListController.swift; sourceTree = "<group>"; };
 		93B48819264FBB270065E9FE /* AnyListController+Cpf.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "AnyListController+Cpf.swift"; sourceTree = "<group>"; };
 		93B48831264FBB370065E9FE /* CPFListController.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; name = CPFListController.podspec; path = ../CPFListController.podspec; sourceTree = "<group>"; };
+		93B4883A264FBDDF0065E9FE /* ListController-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "ListController-Bridging-Header.h"; sourceTree = "<group>"; };
+		C3E04883AC9E800863BDD66A /* Pods-CPFListControllerApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CPFListControllerApp.debug.xcconfig"; path = "Target Support Files/Pods-CPFListControllerApp/Pods-CPFListControllerApp.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -116,6 +121,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1D7D967A6C7BCDA41BC1396A /* Pods_CPFListControllerApp.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -136,6 +142,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4D2A9379497B1FE835B1D7CD /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				7E7AAC6298BB08FE34512727 /* Pods_CPFListControllerApp.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		93B487A5264FB7EB0065E9FE = {
 			isa = PBXGroup;
 			children = (
@@ -144,6 +158,8 @@
 				93B487C7264FB7EF0065E9FE /* CPFListControllerAppTests */,
 				93B487D2264FB7EF0065E9FE /* CPFListControllerAppUITests */,
 				93B487AF264FB7EB0065E9FE /* Products */,
+				D3375A5916BCFBECD7591CCD /* Pods */,
+				4D2A9379497B1FE835B1D7CD /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -193,6 +209,7 @@
 		93B487E7264FBB270065E9FE /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				93B4883A264FBDDF0065E9FE /* ListController-Bridging-Header.h */,
 				93B487E8264FBB270065E9FE /* ListController */,
 			);
 			name = Classes;
@@ -202,13 +219,13 @@
 		93B487E8264FBB270065E9FE /* ListController */ = {
 			isa = PBXGroup;
 			children = (
-				93B487E9264FBB270065E9FE /* Collection */,
-				93B487EB264FBB270065E9FE /* Targets */,
-				93B4880F264FBB270065E9FE /* ListController.swift */,
 				93B48810264FBB270065E9FE /* Foundation */,
+				93B487EB264FBB270065E9FE /* Targets */,
 				93B48816264FBB270065E9FE /* AnyListController.swift */,
-				93B48817264FBB270065E9FE /* Table */,
 				93B48819264FBB270065E9FE /* AnyListController+Cpf.swift */,
+				93B4880F264FBB270065E9FE /* ListController.swift */,
+				93B487E9264FBB270065E9FE /* Collection */,
+				93B48817264FBB270065E9FE /* Table */,
 			);
 			path = ListController;
 			sourceTree = "<group>";
@@ -301,9 +318,9 @@
 		93B48810264FBB270065E9FE /* Foundation */ = {
 			isa = PBXGroup;
 			children = (
+				93B48813264FBB270065E9FE /* CellConfigurer */,
 				93B48811264FBB270065E9FE /* ListFeature.swift */,
 				93B48812264FBB270065E9FE /* ListProxy.h */,
-				93B48813264FBB270065E9FE /* CellConfigurer */,
 				93B48815264FBB270065E9FE /* ListProxy.m */,
 			);
 			path = Foundation;
@@ -325,6 +342,15 @@
 			path = Table;
 			sourceTree = "<group>";
 		};
+		D3375A5916BCFBECD7591CCD /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				C3E04883AC9E800863BDD66A /* Pods-CPFListControllerApp.debug.xcconfig */,
+				2983A2C256BD46CC3883C06A /* Pods-CPFListControllerApp.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -332,9 +358,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 93B487D8264FB7EF0065E9FE /* Build configuration list for PBXNativeTarget "CPFListControllerApp" */;
 			buildPhases = (
+				063B285471925185AA851AE0 /* [CP] Check Pods Manifest.lock */,
 				93B487AA264FB7EB0065E9FE /* Sources */,
 				93B487AB264FB7EB0065E9FE /* Frameworks */,
 				93B487AC264FB7EB0065E9FE /* Resources */,
+				6DE2420C71C7E3A23762E8C7 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -449,6 +477,48 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		063B285471925185AA851AE0 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-CPFListControllerApp-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		6DE2420C71C7E3A23762E8C7 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-CPFListControllerApp/Pods-CPFListControllerApp-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-CPFListControllerApp/Pods-CPFListControllerApp-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-CPFListControllerApp/Pods-CPFListControllerApp-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		93B487AA264FB7EB0065E9FE /* Sources */ = {
@@ -650,6 +720,7 @@
 		};
 		93B487D9264FB7EF0065E9FE /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = C3E04883AC9E800863BDD66A /* Pods-CPFListControllerApp.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -661,6 +732,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.aaron.CPFListControllerApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "../Classes/ListController-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -668,6 +740,7 @@
 		};
 		93B487DA264FB7EF0065E9FE /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2983A2C256BD46CC3883C06A /* Pods-CPFListControllerApp.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -679,6 +752,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.aaron.CPFListControllerApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "../Classes/ListController-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

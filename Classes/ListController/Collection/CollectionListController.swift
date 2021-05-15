@@ -5,7 +5,7 @@
 //  Created by Aaron on 2021/5/13.
 //
 
-import Foundation
+import UIKit
 
 class CollectionListController<Item>: ListController<Item, UICollectionView> {
     override class func target(of feature: ListFeature) -> AnyObject? {

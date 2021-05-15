@@ -5,7 +5,7 @@
 //  Created by Aaron on 2021/5/14.
 //
 
-import Foundation
+import UIKit
 
 class TableListController<Item>: ListController<Item, UITableView> {
     override class func target(of feature: ListFeature) -> AnyObject? {
