@@ -25,9 +25,6 @@
         NSStringFromSelector(@selector(scrollViewShouldScrollToTop:)),
         NSStringFromSelector(@selector(scrollViewDidScrollToTop:)),
     ]];
-//    if (@available(iOS 11.0, *)) {
-//        [selectors addObject:NSStringFromSelector(@selector(scrollViewDidChangeAdjustedContentInset:))];
-//    }
     return selectors;
 }
 
@@ -105,11 +102,5 @@
         self.didScrollToTop(scrollView);
     }
 }
-
-//- (void)scrollViewDidChangeAdjustedContentInset:(UIScrollView *)scrollView API_AVAILABLE(ios(11.0), tvos(11.0)) {
-//    if (self.adjustedContentInsetChanged != nil) {
-//        self.adjustedContentInsetChanged(scrollView);
-//    }
-//}
 
 @end

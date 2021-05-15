@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		1D7D967A6C7BCDA41BC1396A /* Pods_CPFListControllerApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E7AAC6298BB08FE34512727 /* Pods_CPFListControllerApp.framework */; };
 		93B487B2264FB7EB0065E9FE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93B487B1264FB7EB0065E9FE /* AppDelegate.swift */; };
-		93B487B4264FB7EB0065E9FE /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93B487B3264FB7EB0065E9FE /* SceneDelegate.swift */; };
 		93B487B6264FB7EB0065E9FE /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93B487B5264FB7EB0065E9FE /* ViewController.swift */; };
 		93B487B9264FB7EB0065E9FE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 93B487B7264FB7EB0065E9FE /* Main.storyboard */; };
 		93B487BB264FB7EE0065E9FE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 93B487BA264FB7EE0065E9FE /* Assets.xcassets */; };
@@ -60,7 +59,6 @@
 		7E7AAC6298BB08FE34512727 /* Pods_CPFListControllerApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CPFListControllerApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		93B487AE264FB7EB0065E9FE /* CPFListControllerApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CPFListControllerApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		93B487B1264FB7EB0065E9FE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		93B487B3264FB7EB0065E9FE /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		93B487B5264FB7EB0065E9FE /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		93B487B8264FB7EB0065E9FE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		93B487BA264FB7EE0065E9FE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -178,7 +176,6 @@
 			isa = PBXGroup;
 			children = (
 				93B487B1264FB7EB0065E9FE /* AppDelegate.swift */,
-				93B487B3264FB7EB0065E9FE /* SceneDelegate.swift */,
 				93B487B5264FB7EB0065E9FE /* ViewController.swift */,
 				93B487B7264FB7EB0065E9FE /* Main.storyboard */,
 				93B487BA264FB7EE0065E9FE /* Assets.xcassets */,
@@ -547,7 +544,6 @@
 				93B48829264FBB270065E9FE /* CellConfigurer.swift in Sources */,
 				93B4882B264FBB270065E9FE /* AnyListController.swift in Sources */,
 				93B4882C264FBB270065E9FE /* TableListController.swift in Sources */,
-				93B487B4264FB7EB0065E9FE /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -726,6 +722,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = CPFListControllerApp/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -746,6 +743,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = CPFListControllerApp/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

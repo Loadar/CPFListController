@@ -41,9 +41,6 @@ NS_ASSUME_NONNULL_BEGIN
 /// 已结束缩放
 @property (nonatomic, copy, nullable) void (^didEndZooming)(UIScrollView *_Nonnull, UIView *_Nullable, CGFloat);
 
-///// adjusted content insets改变
-//@property (nonatomic, copy, nullable) void (^adjustedContentInsetChanged)(UIScrollView *_Nonnull) API_AVAILABLE(ios(11.0), tvos(11.0));
-
 @end
 
 NS_ASSUME_NONNULL_END
