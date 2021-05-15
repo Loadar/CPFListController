@@ -7,7 +7,7 @@
 
 import UIKit
 
-class CollectionListController<Item>: ListController<Item, UICollectionView> {
+public class CollectionListController<Item>: ListController<Item, UICollectionView> {
     override class func target(of feature: ListFeature) -> AnyObject? {
         switch feature {
         case .base:

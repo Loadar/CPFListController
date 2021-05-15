@@ -33,25 +33,10 @@
                 return aTarget;
             }
         }
-//        if ([aTarget respondsToSelector: aSelector]) {
-//            NSLog(@"Find target %@ for: %@", aTarget, NSStringFromSelector(aSelector));
-//            return  aTarget;
-//        }
     }
     
     return nil;
 }
-
-//+ (BOOL)respondsToSelector:(SEL)aSelector {
-//    if (aSelector == @selector(collectionView:numberOfItemsInSection:)) {
-//        return true;
-//    }
-//    return false;
-//}
-
-//+ (BOOL)respondsToSelector:(SEL)aSelector {
-//    return true;
-//}
 
 - (BOOL)respondsToSelector:(SEL)aSelector {
     for (id<AnyTarget> aTarget in self.targets) {
@@ -66,7 +51,6 @@
 }
 
 - (BOOL)conformsToProtocol:(Protocol *)aProtocol {
-//    UICollectionViewDataSource, UICollectionViewDelegateFlowLayout, UICollectionViewDelegate, UIScrollViewDelegate, UITableViewDataSource, UITableViewDelegate
     if (aProtocol == @protocol(UICollectionViewDataSource)
         || aProtocol == @protocol(UICollectionViewDelegateFlowLayout)
         || aProtocol == @protocol(UICollectionViewDelegate)
@@ -80,7 +64,6 @@
 
 
 - (void)forwardInvocation:(NSInvocation *)invocation {
-//    NSLog(@"%@, %@, %@", NSStringFromSelector(_cmd), NSStringFromSelector(invocation.selector), invocation);
     id target = [self targetForSelector: invocation.selector];
     if (target != nil) {
         [invocation setTarget:target];
@@ -89,15 +72,11 @@
 }
 
 - (NSMethodSignature *)methodSignatureForSelector:(SEL)sel {
-//    NSLog(@"%@, %@", NSStringFromSelector(_cmd), NSStringFromSelector(sel));
     id target = [self targetForSelector:sel];
     if (target != nil) {
         return [target methodSignatureForSelector: sel];
     }
-    
-    // TODO: 如何处理例外情况
     return nil;
-    //return [super methodSignatureForSelector: sel];
 }
 
 @end

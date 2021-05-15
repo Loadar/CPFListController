@@ -7,7 +7,7 @@
 
 import UIKit
 
-class TableListController<Item>: ListController<Item, UITableView> {
+public class TableListController<Item>: ListController<Item, UITableView> {
     override class func target(of feature: ListFeature) -> AnyObject? {
         switch feature {
         case .base:

@@ -35,13 +35,13 @@ public protocol AnyListController: class {
 //    var listScrolledHandler: ((UIScrollView) -> Void)? { get set }
 }
 
-extension AnyListController {
+public extension AnyListController {
     func commonTarget(of feature: ListFeature) -> AnyObject? {
         target(of: feature, with: AnyObject.self)
     }
 }
 
-extension AnyListController {
+public extension AnyListController {
     // 返回指定indexPath的item
     func item(at indexPath: IndexPath) -> Item? {
         guard let list = itemListProviding?(indexPath.section) else { return nil }
@@ -51,8 +51,8 @@ extension AnyListController {
 }
 
 // MARK: - Base
-extension AnyListController {
-    public func sectionCount(with closour: @escaping () -> Int) {
+public extension AnyListController {
+    func sectionCount(with closour: @escaping () -> Int) {
         target(of: .base, with: AnyBaseTarget.self)?.sectionCountProviding = closour
     }
     
@@ -79,7 +79,7 @@ extension AnyListController {
 }
 
 // MARK: - Selectable
-extension AnyListController {
+public extension AnyListController {
     func itemShouldHighlight(with closour: @escaping (IndexPath, Item) -> Bool) {
         target(of: .selectable, with: AnySelectableTarget.self)?.itemShouldHighlight = block(with: closour)
     }
@@ -122,7 +122,7 @@ extension AnyListController {
 }
 
 // MARK: - Supplementary
-extension AnyListController {
+public extension AnyListController {
     // supplementary identifier转换
     internal func identifier(with identifier: String, type: ListComponentType.SupplementaryType) -> String {
         if let configurer = configurers.first(where: { $0.type == .supplementary(type) && $0.originalId == identifier }) {
@@ -132,7 +132,7 @@ extension AnyListController {
     }
 }
 
-extension AnyListController {
+public extension AnyListController {
     func headerIdentifier(with closour: @escaping (IndexPath) -> String) {
         target(of: .supplementary, with: AnySupplementaryTarget.self)?.headerIdentifierProviding = { [weak self] (indexPath) -> String in
             guard let self = self else { return "" }
@@ -218,7 +218,7 @@ extension AnyListController {
 }
 
 // MARK: - Link
-extension AnyListController where ListView: UICollectionView {
+public extension AnyListController where ListView: UICollectionView {
     /// 关联collectionView, 设置datasource及delegate
     func link(_ listView: ListView, registerCell: Bool = true) {
         self.listView = listView
@@ -227,7 +227,7 @@ extension AnyListController where ListView: UICollectionView {
     }
 }
 
-extension AnyListController where ListView: UITableView {
+public extension AnyListController where ListView: UITableView {
     /// 关联tableView, 设置datasource及delegate
     func link(_ listView: ListView, registerCell: Bool = true) {
         self.listView = listView
@@ -237,7 +237,7 @@ extension AnyListController where ListView: UITableView {
 }
 
 // MARK: - Layout
-extension AnyListController where ListView: UICollectionView {
+public extension AnyListController where ListView: UICollectionView {
     func cellSize(with closour: @escaping (IndexPath) -> CGSize) {
         target(of: .layout, with: CollectionLayoutTarget.self)?.cellSizeProviding = closour
     }
@@ -263,7 +263,7 @@ extension AnyListController where ListView: UICollectionView {
     }
 }
 
-extension AnyListController where ListView: UITableView {
+public extension AnyListController where ListView: UITableView {
     func rowHeight(with closour: @escaping (IndexPath) -> CGFloat) {
         target(of: .layout, with: TableLayoutTarget.self)?.rowHeightProviding = closour
     }
@@ -278,7 +278,7 @@ extension AnyListController where ListView: UITableView {
 }
 
 // MARK: - Scrollable
-extension AnyListController where ListView: UIScrollView {
+public extension AnyListController where ListView: UIScrollView {
     func willBeginDecelerating(with closour: @escaping (UIScrollView) -> Void) {
         target(of: .scrollable, with: AnyScrollableTarget.self)?.willBeginDecelerating = closour
     }
