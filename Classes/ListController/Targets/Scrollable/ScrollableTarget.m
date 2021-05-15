@@ -106,7 +106,7 @@
     }
 }
 
-- (void)scrollViewDidChangeAdjustedContentInset:(UIScrollView *)scrollView {
+- (void)scrollViewDidChangeAdjustedContentInset:(UIScrollView *)scrollView API_AVAILABLE(ios(11.0), tvos(11.0)) {
     if (self.adjustedContentInsetChanged != nil) {
         self.adjustedContentInsetChanged(scrollView);
     }
