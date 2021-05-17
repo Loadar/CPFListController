@@ -29,7 +29,7 @@ public class ListController<Item, ListView>: ListProxy, AnyListController {
     /// feature与target的映射表
     private let targetInfo: [ListFeature: AnyObject]
     
-    init(_ features: [ListFeature] = [.base]) {
+    public init(_ features: [ListFeature] = [.base]) {
         
         var targets = [AnyObject]()
         var info: [ListFeature: AnyObject] = [:]

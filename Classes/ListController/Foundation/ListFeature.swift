@@ -22,7 +22,7 @@ public enum ListFeature: Hashable {
     /// 索引
     case index
     /// 自定义，传入一个字符以区分不同的feature， 同时提供一个闭包生成对应的target
-    case custom(String, () -> AnyObject)
+    case custom(String, (() -> AnyObject)?)
     
     public static func == (lhs: ListFeature, rhs: ListFeature) -> Bool {
         switch (lhs, rhs) {

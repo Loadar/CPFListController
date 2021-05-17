@@ -5,15 +5,14 @@ use_frameworks!
 
 source 'https://github.com/CocoaPods/Specs.git'
 
-# 私有库源
-source 'ssh://git@gitee.com/loadar/aarepos.git'
-
 target 'CPFListControllerApp' do
 
     platform :ios, '9.0'
 
     # 链式调用
     pod 'CPFChain'
+    # 瀑布流
+    pod 'CPFWaterfallFlowLayout'
 end
 
 post_install do |pi|

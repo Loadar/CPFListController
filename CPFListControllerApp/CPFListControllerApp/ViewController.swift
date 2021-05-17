@@ -7,10 +7,19 @@
 
 import UIKit
 import CPFChain
+import CPFWaterfallFlowLayout
 
 class ViewController: UIViewController {
     
-    private let listController = CollectionListController<String>([.base, .selectable, .supplementary, .layout, .scrollable])
+    private let listController = CollectionListController<String>(
+        [
+            .base,
+            .selectable,
+            .supplementary,
+            .layout,
+            .scrollable
+        ]
+    )
     private let tableListController = TableListController<String>([.base, .selectable, .supplementary, .layout, .scrollable])
 
     override func viewDidLoad() {
@@ -18,7 +27,8 @@ class ViewController: UIViewController {
         // Do any additional setup after loading the view.
         
         let collectionView: UICollectionView = {
-           let layout = UICollectionViewFlowLayout()
+           let layout = WaterfallLayout()
+            layout.columnCount = 2
             layout.itemSize = CGSize(width: 100, height: 100)
             layout.headerReferenceSize = CGSize(width: 100, height: 40)
             layout.footerReferenceSize = CGSize(width: 100, height: 60)
@@ -103,7 +113,9 @@ class ViewController: UIViewController {
             .sectionCount { 5 }
             .itemList { _ in ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l"] }
             .cellSize { (indexPath) -> CGSize in
-                return CGSize(width: 100 * CGFloat(indexPath.item % 5) / CGFloat(5), height: 100)
+                let width = 100 * CGFloat(indexPath.item % 5) / CGFloat(5)
+                let height = CGFloat(indexPath.item % 2 == 0 ? 100 : 50)
+                return CGSize(width: width, height: height)
             }
             .sectionInsets { (section) -> UIEdgeInsets in
                 let value: CGFloat = CGFloat(section) * 10
@@ -119,8 +131,10 @@ class ViewController: UIViewController {
                 return CGSize(width: 100, height: CGFloat(section + 1) * 20)
             }
             .footerSize { (section) -> CGSize in
-                return CGSize(width: 60, height: section % 2 == 0 ? 100 : 50)
+                let height = (section % 2 == 0) ? 100 : 50
+                return CGSize(width: 60, height: height)
             }
+        
         listController.cpf
             .scrolled { (scrollView) in
                 //print("\(scrollView) scrolling")
@@ -162,6 +176,11 @@ class ViewController: UIViewController {
             }
             .didEndZooming { (_, _, _) in
                 print("collection didEndZooming")
+            }
+        
+        collectionView.cpf
+            .columnCount { (section) -> Int in
+                return section + 1
             }
         
         let tableView = UITableView()

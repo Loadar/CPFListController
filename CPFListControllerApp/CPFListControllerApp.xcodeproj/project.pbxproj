@@ -110,7 +110,7 @@
 		93B48818264FBB270065E9FE /* TableListController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableListController.swift; sourceTree = "<group>"; };
 		93B48819264FBB270065E9FE /* AnyListController+Cpf.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "AnyListController+Cpf.swift"; sourceTree = "<group>"; };
 		93B48831264FBB370065E9FE /* CPFListController.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; name = CPFListController.podspec; path = ../CPFListController.podspec; sourceTree = "<group>"; };
-		93B4883A264FBDDF0065E9FE /* ListController-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "ListController-Bridging-Header.h"; sourceTree = "<group>"; };
+		93B488C526520B7D0065E9FE /* ListController-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "ListController-Bridging-Header.h"; path = "../ListController-Bridging-Header.h"; sourceTree = "<group>"; };
 		C3E04883AC9E800863BDD66A /* Pods-CPFListControllerApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CPFListControllerApp.debug.xcconfig"; path = "Target Support Files/Pods-CPFListControllerApp/Pods-CPFListControllerApp.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -177,6 +177,7 @@
 			children = (
 				93B487B1264FB7EB0065E9FE /* AppDelegate.swift */,
 				93B487B5264FB7EB0065E9FE /* ViewController.swift */,
+				93B488C526520B7D0065E9FE /* ListController-Bridging-Header.h */,
 				93B487B7264FB7EB0065E9FE /* Main.storyboard */,
 				93B487BA264FB7EE0065E9FE /* Assets.xcassets */,
 				93B487BC264FB7EE0065E9FE /* LaunchScreen.storyboard */,
@@ -206,7 +207,6 @@
 		93B487E7264FBB270065E9FE /* Classes */ = {
 			isa = PBXGroup;
 			children = (
-				93B4883A264FBDDF0065E9FE /* ListController-Bridging-Header.h */,
 				93B487E8264FBB270065E9FE /* ListController */,
 			);
 			name = Classes;
@@ -729,7 +729,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.aaron.CPFListControllerApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "../Classes/ListController-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "../CPFListControllerApp/ListController-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -750,7 +750,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.aaron.CPFListControllerApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "../Classes/ListController-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "../CPFListControllerApp/ListController-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

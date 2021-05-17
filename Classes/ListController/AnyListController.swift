@@ -27,12 +27,6 @@ public protocol AnyListController: class {
     
     /// 获取指定feature的target
     func target<T>(of feature: ListFeature, with type: T.Type) -> T?
-
-//    /// supplementary identifier转换
-//    func identifier(with identifier: String, type: ListComponentType.SupplementaryType) -> String
-    
-//
-//    var listScrolledHandler: ((UIScrollView) -> Void)? { get set }
 }
 
 public extension AnyListController {

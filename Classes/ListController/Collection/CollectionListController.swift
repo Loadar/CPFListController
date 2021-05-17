@@ -21,7 +21,7 @@ public class CollectionListController<Item>: ListController<Item, UICollectionVi
         case .scrollable:
             return ScrollableTarget()
         case .custom(_, let closour):
-            return closour()
+            return closour?()
         default:
             break
         }

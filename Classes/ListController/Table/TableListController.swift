@@ -21,7 +21,7 @@ public class TableListController<Item>: ListController<Item, UITableView> {
         case .scrollable:
             return ScrollableTarget()
         case .custom(_, let closour):
-            return closour()
+            return closour?()
         default:
             break
         }
