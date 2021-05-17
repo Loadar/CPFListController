@@ -10,11 +10,11 @@ Pod::Spec.new do |s|
   #s.source_files = 'Classes/ListController/AnyListController.swift'
 
   s.ios.deployment_target = "9.0"
+  s.swift_version = '5.0'
   s.requires_arc = true
   
-  s.swift_version = '5.0'
   s.subspec 'Base' do |subspec|
-      subspec.source_files = 'Classes/**/*.{h,m,swift}'
+      subspec.source_files = 'Classes/ListController/**/*.{h,m,swift}'
       subspec.exclude_files = 'Classes/ListController/AnyListController+Cpf.swift'
   end
   
@@ -23,4 +23,12 @@ Pod::Spec.new do |s|
       subspec.dependency 'CPFChain'
       subspec.dependency 'CPFListController/Base'
   end
+  
+  s.subspec 'WaterfallLayout' do |subspec|
+      subspec.source_files = 'Classes/WaterfallLayout/WaterfallLayout+Cpf.swift'
+      subspec.dependency 'CPFChain'
+      subspec.dependency 'CPFListController/Base'
+      subspec.dependency 'CPFWaterfallFlowLayout'
+  end
+
 end

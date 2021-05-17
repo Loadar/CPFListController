@@ -35,6 +35,7 @@
 		93B4882B264FBB270065E9FE /* AnyListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93B48816264FBB270065E9FE /* AnyListController.swift */; };
 		93B4882C264FBB270065E9FE /* TableListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93B48818264FBB270065E9FE /* TableListController.swift */; };
 		93B4882D264FBB270065E9FE /* AnyListController+Cpf.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93B48819264FBB270065E9FE /* AnyListController+Cpf.swift */; };
+		93B489192652605C0065E9FE /* WaterfallLayout+Cpf.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93B489182652605C0065E9FE /* WaterfallLayout+Cpf.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -111,6 +112,7 @@
 		93B48819264FBB270065E9FE /* AnyListController+Cpf.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "AnyListController+Cpf.swift"; sourceTree = "<group>"; };
 		93B48831264FBB370065E9FE /* CPFListController.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; name = CPFListController.podspec; path = ../CPFListController.podspec; sourceTree = "<group>"; };
 		93B488C526520B7D0065E9FE /* ListController-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "ListController-Bridging-Header.h"; path = "../ListController-Bridging-Header.h"; sourceTree = "<group>"; };
+		93B489182652605C0065E9FE /* WaterfallLayout+Cpf.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "WaterfallLayout+Cpf.swift"; sourceTree = "<group>"; };
 		C3E04883AC9E800863BDD66A /* Pods-CPFListControllerApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CPFListControllerApp.debug.xcconfig"; path = "Target Support Files/Pods-CPFListControllerApp/Pods-CPFListControllerApp.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -207,6 +209,7 @@
 		93B487E7264FBB270065E9FE /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				93B48916265260230065E9FE /* WaterfallLayout */,
 				93B487E8264FBB270065E9FE /* ListController */,
 			);
 			name = Classes;
@@ -337,6 +340,14 @@
 				93B48818264FBB270065E9FE /* TableListController.swift */,
 			);
 			path = Table;
+			sourceTree = "<group>";
+		};
+		93B48916265260230065E9FE /* WaterfallLayout */ = {
+			isa = PBXGroup;
+			children = (
+				93B489182652605C0065E9FE /* WaterfallLayout+Cpf.swift */,
+			);
+			path = WaterfallLayout;
 			sourceTree = "<group>";
 		};
 		D3375A5916BCFBECD7591CCD /* Pods */ = {
@@ -528,6 +539,7 @@
 				93B48823264FBB270065E9FE /* ScrollableTarget.m in Sources */,
 				93B487B6264FB7EB0065E9FE /* ViewController.swift in Sources */,
 				93B48821264FBB270065E9FE /* SelectableTarget.m in Sources */,
+				93B489192652605C0065E9FE /* WaterfallLayout+Cpf.swift in Sources */,
 				93B48828264FBB270065E9FE /* ListFeature.swift in Sources */,
 				93B48826264FBB270065E9FE /* TableBaseTarget.m in Sources */,
 				93B48827264FBB270065E9FE /* ListController.swift in Sources */,
