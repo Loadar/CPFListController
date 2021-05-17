@@ -9,7 +9,7 @@ import Foundation
 import CPFChain
 import CPFWaterfallFlowLayout
 
-extension Cpf where Base: AnyListController, Base.ListView: UICollectionView {
+public extension Cpf where Base: AnyListController, Base.ListView: UICollectionView {
     @discardableResult
     func columnCount(_ closour: @escaping (Int) -> (Int)) -> Self {
         base.listView?.cpf.columnCount(closour)
