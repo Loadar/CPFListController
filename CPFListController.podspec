@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name = 'CPFListController'
-  s.version = '1.0.4'
+  s.version = '1.0.5'
   s.summary = '通用的列表控制器'
   s.license = { :type => 'MIT', :file => 'LICENSE' }
   s.author = { 'chenpengfei' => 'afeiafeia@163.com' }

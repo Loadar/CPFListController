@@ -241,7 +241,7 @@ public extension Cpf where Base: AnyListController, Base.ListView: UITableView {
 // MARK: - Layout
 public extension Cpf where Base: AnyListController, Base.ListView: UICollectionView {
     @discardableResult
-    func cellSize(_ closour: @escaping (IndexPath) -> CGSize) -> Self {
+    func cellSize(_ closour: @escaping (IndexPath, Base.Item) -> CGSize) -> Self {
         base.cellSize(with: closour)
         return self
     }
@@ -279,7 +279,7 @@ public extension Cpf where Base: AnyListController, Base.ListView: UICollectionV
 
 public extension Cpf where Base: AnyListController, Base.ListView: UITableView {
     @discardableResult
-    func rowHeight(_ closour: @escaping (IndexPath) -> CGFloat) -> Self {
+    func rowHeight(_ closour: @escaping (IndexPath, Base.Item) -> CGFloat) -> Self {
         base.rowHeight(with: closour)
         return self
     }

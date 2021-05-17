@@ -64,7 +64,7 @@ public extension AnyListController {
     }
     
     func itemDidSelected(with closour: @escaping (IndexPath, Item) -> Void) {
-        target(of: .base, with: AnyBaseTarget.self)?.itemDidSelected = block(with: closour)
+        target(of: .base, with: AnyBaseTarget.self)?.itemDidSelected = block(with: closour, defaultValue: ())
     }
 
     func scrolled(with closour: @escaping (UIScrollView) -> Void) {
@@ -75,43 +75,27 @@ public extension AnyListController {
 // MARK: - Selectable
 public extension AnyListController {
     func itemShouldHighlight(with closour: @escaping (IndexPath, Item) -> Bool) {
-        target(of: .selectable, with: AnySelectableTarget.self)?.itemShouldHighlight = block(with: closour)
+        target(of: .selectable, with: AnySelectableTarget.self)?.itemShouldHighlight = block(with: closour, defaultValue: false)
     }
     
     func itemDidHighlight(with closour: @escaping (IndexPath, Item) -> Void) {
-        target(of: .selectable, with: AnySelectableTarget.self)?.itemDidHighlight = block(with: closour)
+        target(of: .selectable, with: AnySelectableTarget.self)?.itemDidHighlight = block(with: closour, defaultValue: ())
     }
     
     func itemDidUnHighlight(with closour: @escaping (IndexPath, Item) -> Void) {
-        target(of: .selectable, with: AnySelectableTarget.self)?.itemDidUnhighlight = block(with: closour)
+        target(of: .selectable, with: AnySelectableTarget.self)?.itemDidUnhighlight = block(with: closour, defaultValue: ())
     }
 
     func itemShouldSelect(with closour: @escaping (IndexPath, Item) -> Bool) {
-        target(of: .selectable, with: AnySelectableTarget.self)?.itemShouldSelect = block(with: closour)
+        target(of: .selectable, with: AnySelectableTarget.self)?.itemShouldSelect = block(with: closour, defaultValue: false)
     }
     
     func itemShouldDeselect(with closour: @escaping (IndexPath, Item) -> Bool) {
-        target(of: .selectable, with: AnySelectableTarget.self)?.itemShouldDeselect = block(with: closour)
+        target(of: .selectable, with: AnySelectableTarget.self)?.itemShouldDeselect = block(with: closour, defaultValue: false)
     }
     
     func itemDidDeselected(with closour: @escaping (IndexPath, Item) -> Void) {
-        target(of: .selectable, with: AnySelectableTarget.self)?.itemDidDeselected = block(with: closour)
-    }
-    
-    private func block(with closour: @escaping (IndexPath, Item) -> Bool) -> ((IndexPath) -> Bool) {
-        return { [weak self] (indexPath) in
-            guard let self = self else { return false }
-            guard let item = self.item(at: indexPath) else { return false }
-            return closour(indexPath, item)
-        }
-    }
-    
-    private func block(with closour: @escaping (IndexPath, Item) -> Void) -> ((IndexPath) -> Void) {
-        return { [weak self] (indexPath) in
-            guard let self = self else { return }
-            guard let item = self.item(at: indexPath) else { return }
-            return closour(indexPath, item)
-        }
+        target(of: .selectable, with: AnySelectableTarget.self)?.itemDidDeselected = block(with: closour, defaultValue: ())
     }
 }
 
@@ -232,8 +216,8 @@ public extension AnyListController where ListView: UITableView {
 
 // MARK: - Layout
 public extension AnyListController where ListView: UICollectionView {
-    func cellSize(with closour: @escaping (IndexPath) -> CGSize) {
-        target(of: .layout, with: CollectionLayoutTarget.self)?.cellSizeProviding = closour
+    func cellSize(with closour: @escaping (IndexPath, Item) -> CGSize) {
+        target(of: .layout, with: CollectionLayoutTarget.self)?.cellSizeProviding = block(with: closour,defaultValue: .zero)
     }
     
     func sectionInsets(with closour: @escaping (Int) -> UIEdgeInsets) {
@@ -258,8 +242,8 @@ public extension AnyListController where ListView: UICollectionView {
 }
 
 public extension AnyListController where ListView: UITableView {
-    func rowHeight(with closour: @escaping (IndexPath) -> CGFloat) {
-        target(of: .layout, with: TableLayoutTarget.self)?.rowHeightProviding = closour
+    func rowHeight(with closour: @escaping (IndexPath, Item) -> CGFloat) {
+        target(of: .layout, with: TableLayoutTarget.self)?.rowHeightProviding = block(with: closour, defaultValue: 0)
     }
 
     func headerHeight(with closour: @escaping (Int) -> CGFloat) {
@@ -320,5 +304,17 @@ public extension AnyListController where ListView: UIScrollView {
     
     func didEndZooming(with closour: @escaping (UIScrollView, UIView?, CGFloat) -> Void) {
         target(of: .scrollable, with: AnyScrollableTarget.self)?.didEndZooming = closour
+    }
+}
+
+
+// MARK: - Private
+extension AnyListController {
+    private func block<T>(with closour: @escaping (IndexPath, Item) -> T, defaultValue: T) -> ((IndexPath) -> T) {
+        return { [weak self] (indexPath) in
+            guard let self = self else { return defaultValue }
+            guard let item = self.item(at: indexPath) else { return defaultValue }
+            return closour(indexPath, item)
+        }
     }
 }

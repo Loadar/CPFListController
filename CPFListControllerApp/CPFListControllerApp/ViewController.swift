@@ -112,7 +112,7 @@ class ViewController: UIViewController {
             .link(collectionView)
             .sectionCount { 5 }
             .itemList { _ in ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l"] }
-            .cellSize { (indexPath) -> CGSize in
+            .cellSize { (indexPath, _) -> CGSize in
                 let width = 100 * CGFloat(indexPath.item % 5) / CGFloat(5)
                 let height = CGFloat(indexPath.item % 2 == 0 ? 100 : 50)
                 return CGSize(width: width, height: height)
@@ -253,7 +253,7 @@ class ViewController: UIViewController {
             .register(type: .footer, view: TestTableHeader.self, for: "test2") { (footer, indexPath) in
                 footer.label.text = "## footer test2 ## \(indexPath.section)"
             }
-            .rowHeight { (indexPath) -> CGFloat in
+            .rowHeight { (indexPath, _) -> CGFloat in
                 return indexPath.item % 2 == 0 ? 50 : 20
             }
             .headerHeight { (section) -> CGFloat in
