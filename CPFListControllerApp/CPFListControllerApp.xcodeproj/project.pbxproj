@@ -243,9 +243,9 @@
 			children = (
 				93B487EC264FBB270065E9FE /* AnyTarget.h */,
 				93B487FB264FBB270065E9FE /* AnyBaseTarget.h */,
-				93B487EE264FBB270065E9FE /* AnySelectableTarget.h */,
 				93B487ED264FBB270065E9FE /* AnySupplementaryTarget.h */,
 				93B4880D264FBB270065E9FE /* AnyLayoutTarget.h */,
+				93B487EE264FBB270065E9FE /* AnySelectableTarget.h */,
 				93B4880E264FBB270065E9FE /* AnyScrollableTarget.h */,
 				93B48806264FBB270065E9FE /* Base */,
 				93B487FC264FBB270065E9FE /* Selectable */,
@@ -259,10 +259,10 @@
 		93B487EF264FBB270065E9FE /* Layout */ = {
 			isa = PBXGroup;
 			children = (
-				93B487F0264FBB270065E9FE /* TableLayoutTarget.m */,
-				93B487F1264FBB270065E9FE /* CollectionLayoutTarget.m */,
 				93B487F2264FBB270065E9FE /* TableLayoutTarget.h */,
+				93B487F0264FBB270065E9FE /* TableLayoutTarget.m */,
 				93B487F3264FBB270065E9FE /* CollectionLayoutTarget.h */,
+				93B487F1264FBB270065E9FE /* CollectionLayoutTarget.m */,
 			);
 			path = Layout;
 			sourceTree = "<group>";
@@ -271,11 +271,11 @@
 			isa = PBXGroup;
 			children = (
 				93B487F5264FBB270065E9FE /* SupplementaryTarget.h */,
-				93B487F6264FBB270065E9FE /* TableSupplementaryTarget.h */,
-				93B487F7264FBB270065E9FE /* CollectionSupplementaryTarget.m */,
-				93B487F8264FBB270065E9FE /* CollectionSupplementaryTarget.h */,
-				93B487F9264FBB270065E9FE /* TableSupplementaryTarget.m */,
 				93B487FA264FBB270065E9FE /* SupplementaryTarget.m */,
+				93B487F6264FBB270065E9FE /* TableSupplementaryTarget.h */,
+				93B487F9264FBB270065E9FE /* TableSupplementaryTarget.m */,
+				93B487F8264FBB270065E9FE /* CollectionSupplementaryTarget.h */,
+				93B487F7264FBB270065E9FE /* CollectionSupplementaryTarget.m */,
 			);
 			path = Supplementary;
 			sourceTree = "<group>";
@@ -283,12 +283,12 @@
 		93B487FC264FBB270065E9FE /* Selectable */ = {
 			isa = PBXGroup;
 			children = (
-				93B487FD264FBB270065E9FE /* TableSelectableTarget.h */,
-				93B487FE264FBB270065E9FE /* CollectionSelectableTarget.m */,
-				93B487FF264FBB270065E9FE /* SelectableTarget.m */,
-				93B48800264FBB270065E9FE /* TableSelectableTarget.m */,
 				93B48801264FBB270065E9FE /* SelectableTarget.h */,
+				93B487FF264FBB270065E9FE /* SelectableTarget.m */,
+				93B487FD264FBB270065E9FE /* TableSelectableTarget.h */,
+				93B48800264FBB270065E9FE /* TableSelectableTarget.m */,
 				93B48802264FBB270065E9FE /* CollectionSelectableTarget.h */,
+				93B487FE264FBB270065E9FE /* CollectionSelectableTarget.m */,
 			);
 			path = Selectable;
 			sourceTree = "<group>";
@@ -305,12 +305,12 @@
 		93B48806264FBB270065E9FE /* Base */ = {
 			isa = PBXGroup;
 			children = (
-				93B48807264FBB270065E9FE /* CollectionBaseTarget.h */,
 				93B48808264FBB270065E9FE /* BaseTarget.h */,
-				93B48809264FBB270065E9FE /* TableBaseTarget.h */,
-				93B4880A264FBB270065E9FE /* CollectionBaseTarget.m */,
 				93B4880B264FBB270065E9FE /* BaseTarget.m */,
+				93B48809264FBB270065E9FE /* TableBaseTarget.h */,
 				93B4880C264FBB270065E9FE /* TableBaseTarget.m */,
+				93B48807264FBB270065E9FE /* CollectionBaseTarget.h */,
+				93B4880A264FBB270065E9FE /* CollectionBaseTarget.m */,
 			);
 			path = Base;
 			sourceTree = "<group>";

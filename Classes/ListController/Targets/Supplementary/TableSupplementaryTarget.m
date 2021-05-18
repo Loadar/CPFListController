@@ -22,6 +22,10 @@
 
 // MARK: - UITableView
 - (nullable UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
+    if (self.headerConfiguring == nil) {
+        return nil;
+    }
+    
     NSIndexPath *indexPath = [NSIndexPath indexPathForRow:0 inSection:section];
     NSString *identifier = [self headerIdentifierAt:indexPath];
     UITableViewHeaderFooterView *header = [tableView dequeueReusableHeaderFooterViewWithIdentifier:identifier];
@@ -33,6 +37,10 @@
 }
 
 - (nullable UIView *)tableView:(UITableView *)tableView viewForFooterInSection:(NSInteger)section {
+    if (self.footerConfiguring == nil) {
+        return nil;
+    }
+    
     NSIndexPath *indexPath = [NSIndexPath indexPathForRow:0 inSection:section];
     NSString *identifier = [self footerIdentifierAt:indexPath];
     UITableViewHeaderFooterView *footer = [tableView dequeueReusableHeaderFooterViewWithIdentifier:identifier];

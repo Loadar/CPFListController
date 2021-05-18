@@ -23,6 +23,29 @@ public extension Cpf where Base: AnyListController {
     }
     
     @discardableResult
+    func itemLists(_ data: [[Base.Item]]) -> Self {
+        base.sectionCount { () -> Int in
+            data.count
+        }
+        base.itemList { (section) -> [Base.Item] in
+            guard 0..<data.endIndex ~= section else { return [] }
+            return data[section]
+        }
+        return self
+    }
+    
+    @discardableResult
+    func itemList(_ data: [Base.Item]) -> Self {
+        base.sectionCount { () -> Int in
+            return 1
+        }
+        base.itemList { (section) -> [Base.Item] in
+            return data
+        }
+        return self
+    }
+    
+    @discardableResult
     func cellIdentifier(_ closour: @escaping (IndexPath, Base.Item) -> String) -> Self {
         base.cellIdentifier(with: closour)
         return self
