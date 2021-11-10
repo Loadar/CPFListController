@@ -16,9 +16,15 @@ public class ListController<Item, ListView>: ListProxy, AnyListController {
     public func target<T>(of feature: ListFeature, with type: T.Type) -> T? {
         if let target = targetInfo[feature] as? T {
             return target
+        } else {
+            if let target = Self.target(of: feature) {
+                targetInfo[feature] = target
+                appendTarget(target)
+                return target as? T
+            }
+            assert(false, "未找到对应的target")
+            return nil
         }
-        assert(false, "未找到对应的target")
-        return nil
     }
     
     class func target(of feature: ListFeature) -> AnyObject? {
@@ -27,16 +33,13 @@ public class ListController<Item, ListView>: ListProxy, AnyListController {
     }
 
     /// feature与target的映射表
-    private let targetInfo: [ListFeature: AnyObject]
+    private var targetInfo: [ListFeature: AnyObject]
     
-    public init(_ features: [ListFeature] = [.base]) {
-        
+    public init() {
         var targets = [AnyObject]()
         var info: [ListFeature: AnyObject] = [:]
-        
-        for aFeature in features {
-            guard let target = Self.target(of: aFeature) else { continue }
-            info[aFeature] = target
+        if let target = Self.target(of: .base) {
+            info[.base] = target
             targets.append(target)
         }
         targetInfo = info

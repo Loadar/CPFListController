@@ -8,7 +8,7 @@
 import Foundation
 
 /// 列表controller顶层协议
-public protocol AnyListController: class {
+public protocol AnyListController: AnyObject {
     // 列表项的数据类型(如果需要支持多种类型，转换成同一种类型的数据)
     associatedtype Item
     // list view类型，UITableView或UICollectionView或它们的子类

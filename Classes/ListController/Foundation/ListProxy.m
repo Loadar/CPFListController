@@ -19,6 +19,14 @@
     return self;
 }
 
+- (void)appendTarget:(id)target {
+    NSMutableArray *targets = [self.targets mutableCopy];
+    if (![targets containsObject:target]) {
+        [targets addObject:target];
+        self.targets = targets;
+    }
+}
+
 - (id)targetForSelector:(SEL)aSelector {
     if (aSelector == @selector(respondsToSelector:) || aSelector == @selector(conformsToProtocol:)) {
         return self;

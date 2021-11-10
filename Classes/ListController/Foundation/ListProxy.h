@@ -15,6 +15,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 - (instancetype)initWithTargets:(NSArray<id> *)targets;
 
+- (void)appendTarget:(id)target;
+
 @end
 
 NS_ASSUME_NONNULL_END

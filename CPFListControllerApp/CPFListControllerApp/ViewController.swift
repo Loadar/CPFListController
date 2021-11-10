@@ -11,16 +11,8 @@ import CPFWaterfallFlowLayout
 
 class ViewController: UIViewController {
     
-    private let listController = CollectionListController<String>(
-        [
-            .base,
-            .selectable,
-            .supplementary,
-            .layout,
-            .scrollable
-        ]
-    )
-    private let tableListController = TableListController<String>([.base, .selectable, .supplementary, .layout, .scrollable])
+    private let listController = CollectionListController<String>()
+    private let tableListController = TableListController<String>()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -264,48 +256,50 @@ class ViewController: UIViewController {
             }
 
 
-        tableListController.cpf
-            .scrolled { (scrollView) in
-                //print("\(scrollView) scrolling")
-            }
-            .willBeginDecelerating { (_) in
-                print("table willBeginDecelerating")
-            }
-            .didEndDecelerating { (_) in
-                print("table didEndDecelerating")
-            }
-            .willBeginDragging { (_) in
-                print("table willBeginDragging")
-            }
-            .willEndDragging { (_, _, _) in
-                print("table willEndDragging")
-            }
-            .willEndDragging { (_, _, _)  in
-                print("table willEndDragging")
-            }
-            .didEndScrollingAnimation { (_) in
-                print("table didEndScrollingAnimation")
-            }
-            .shouldScrollToTop { (_) in
-                print("table shouldScrollToTop")
-                return true
-            }
-            .didScrollToTop { (_) in
-                print("table didScrollToTop")
-            }
-            .didZoom { (_) in
-                print("table didZoom")
-            }
-            .viewForZooming { (_) in
-                print("table viewForZooming")
-                return nil
-            }
-            .willBeginZooming { (_, _) in
-                print("table willBeginZooming")
-            }
-            .didEndZooming { (_, _, _) in
-                print("table didEndZooming")
-            }
+        DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+            self.tableListController.cpf
+                .scrolled { (scrollView) in
+                    //print("\(scrollView) scrolling")
+                }
+                .willBeginDecelerating { (_) in
+                    print("table willBeginDecelerating")
+                }
+                .didEndDecelerating { (_) in
+                    print("table didEndDecelerating")
+                }
+                .willBeginDragging { (_) in
+                    print("table willBeginDragging")
+                }
+                .willEndDragging { (_, _, _) in
+                    print("table willEndDragging")
+                }
+                .willEndDragging { (_, _, _)  in
+                    print("table willEndDragging")
+                }
+                .didEndScrollingAnimation { (_) in
+                    print("table didEndScrollingAnimation")
+                }
+                .shouldScrollToTop { (_) in
+                    print("table shouldScrollToTop")
+                    return true
+                }
+                .didScrollToTop { (_) in
+                    print("table didScrollToTop")
+                }
+                .didZoom { (_) in
+                    print("table didZoom")
+                }
+                .viewForZooming { (_) in
+                    print("table viewForZooming")
+                    return nil
+                }
+                .willBeginZooming { (_, _) in
+                    print("table willBeginZooming")
+                }
+                .didEndZooming { (_, _, _) in
+                    print("table didEndZooming")
+                }
+        }
     }
 }
 
