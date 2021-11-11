@@ -29,6 +29,9 @@ class CollectionViewController: UIViewController {
         collectionView.backgroundColor = .white
         
         listController.cpf
+            .link(collectionView)
+
+        listController.cpf
             .itemShouldHighlight({ (indexPath, item) -> Bool in
                 print("itemShouldHighlight:", indexPath, item)
                 return true
@@ -55,24 +58,28 @@ class CollectionViewController: UIViewController {
             }
         
         listController.cpf
-            .headerIdentifier { (indexPath) -> String in
-                return indexPath.section % 2 == 0 ? "test" : "test2"
-            }
-            .footerIdentifier { (indexPath) -> String in
-                return indexPath.section % 2 == 0 ? "test" : "test2"
-            }
-            .register(type: .header, view: TestHeader.self, for: "test") { (header, indexPath) in
-                header.label.text = "** header \(indexPath.section) **"
-            }
-            .register(type: .header, view: TestHeader.self, for: "test2") { (header, indexPath) in
-                header.label.text = "## header \(indexPath.section) ##"
-            }
-            .register(type: .footer, view: TestHeader.self, for: "test") { (footer, indexPath) in
-                footer.label.text = "** footer \(indexPath.section) **"
-            }
-            .register(type: .footer, view: TestHeader.self, for: "test2") { (footer, indexPath) in
-                footer.label.text = "## footer \(indexPath.section) ##"
-            }
+//            .headerIdentifier { (indexPath) -> String in
+//                return indexPath.section % 2 == 0 ? "test" : "test2"
+//            }
+//            .footerIdentifier { (indexPath) -> String in
+//                return indexPath.section % 2 == 0 ? "test" : "test2"
+//            }
+//            .register(type: .header, view: TestHeader.self, for: "test") { (header, indexPath) in
+//                header.label.text = "** header \(indexPath.section) **"
+//            }
+//            .register(type: .header, view: TestHeader.self, for: "test2") { (header, indexPath) in
+//                header.label.text = "## header \(indexPath.section) ##"
+//            }
+//            .register(type: .footer, view: TestHeader.self, for: "test") { (footer, indexPath) in
+//                footer.label.text = "** footer \(indexPath.section) **"
+//            }
+//            .register(type: .footer, view: TestHeader.self, for: "test2") { (footer, indexPath) in
+//                footer.label.text = "## footer \(indexPath.section) ##"
+//            }
+//            .register(type: .header, view: UICollectionReusableView.self) { header, indexPath in
+//                header.layer.borderWidth = 2
+//                header.layer.borderColor = UIColor.purple.cgColor
+//            }
         
         
         listController.cpf
@@ -95,9 +102,14 @@ class CollectionViewController: UIViewController {
             .register(cell: UICollectionViewCell.self) { (cell, _, _) in
                 cell.backgroundColor = .blue
             }
+            .register(type: .header, view: UICollectionReusableView.self) { header, indexPath in
+                header.layer.borderWidth = 2
+                header.layer.borderColor = UIColor.purple.cgColor
+            }
+
         
         listController.cpf
-            .link(collectionView)
+//            .link(collectionView)
             .sectionCount { 5 }
             .itemList { _ in ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l"] }
             .cellSize { (indexPath, _) -> CGSize in
@@ -115,13 +127,13 @@ class CollectionViewController: UIViewController {
             .interitemSpacing { (section) -> CGFloat in
                 return section % 2 == 0 ? 0 : 30
             }
-            .headerSize { (section) -> CGSize in
-                return CGSize(width: 200, height: CGFloat(section + 1) * 20)
-            }
-            .footerSize { (section) -> CGSize in
-                let height = (section % 2 == 0) ? 100 : 50
-                return CGSize(width: 160, height: height)
-            }
+//            .headerSize { (section) -> CGSize in
+//                return CGSize(width: 200, height: CGFloat(section + 1) * 20)
+//            }
+//            .footerSize { (section) -> CGSize in
+//                let height = (section % 2 == 0) ? 100 : 50
+//                return CGSize(width: 160, height: height)
+//            }
         
         listController.cpf
             .scrolled { (scrollView) in

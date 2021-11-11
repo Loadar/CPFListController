@@ -27,4 +27,10 @@ public class CollectionListController<Item>: ListController<Item, UICollectionVi
         }
         return nil
     }
+    
+    public override var shouldReLink: Bool {
+        didSet {
+                reLink()
+        }
+    }
 }

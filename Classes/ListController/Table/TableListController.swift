@@ -28,4 +28,10 @@ public class TableListController<Item>: ListController<Item, UITableView> {
         return nil
     }
 
+    public override var shouldReLink: Bool {
+        didSet {
+                reLink()
+        }
+    }
+
 }

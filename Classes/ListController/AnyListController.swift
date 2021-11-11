@@ -210,7 +210,7 @@ public extension AnyListController where ListView: UICollectionView {
         listView.delegate = self as? UICollectionViewDelegateFlowLayout
     }
     
-    private func reLink() {
+    func reLink() {
         guard let listView = self.listView else { return }
         guard shouldReLink else { return }
         defer {
@@ -232,7 +232,7 @@ public extension AnyListController where ListView: UITableView {
         listView.delegate = self as? UITableViewDelegate
     }
     
-    private func reLink() {
+    func reLink() {
         guard let listView = self.listView else { return }
         guard shouldReLink else { return }
         defer {
@@ -250,49 +250,40 @@ public extension AnyListController where ListView: UITableView {
 // MARK: - Layout
 public extension AnyListController where ListView: UICollectionView {
     func cellSize(with closour: @escaping (IndexPath, Item) -> CGSize) {
-        defer { reLink() }
         target(of: .layout, with: CollectionLayoutTarget.self)?.cellSizeProviding = block(with: closour,defaultValue: .zero)
     }
     
     func sectionInsets(with closour: @escaping (Int) -> UIEdgeInsets) {
-        defer { reLink() }
         target(of: .layout, with: CollectionLayoutTarget.self)?.sectionInsetsProviding = closour
     }
     
     func lineSpacing(with closour: @escaping (Int) -> CGFloat) {
-        defer { reLink() }
         target(of: .layout, with: CollectionLayoutTarget.self)?.lineSpacingProviding = closour
     }
     
     func interitemSpacing(with closour: @escaping (Int) -> CGFloat) {
-        defer { reLink() }
         target(of: .layout, with: CollectionLayoutTarget.self)?.interitemSpacingProviding = closour
     }
     
     func headerSize(with closour: @escaping (Int) -> CGSize) {
-        defer { reLink() }
         target(of: .layout, with: CollectionLayoutTarget.self)?.headerSizeProviding = closour
     }
     
     func footerSize(with closour: @escaping (Int) -> CGSize) {
-        defer { reLink() }
         target(of: .layout, with: CollectionLayoutTarget.self)?.footerSizeProviding = closour
     }
 }
 
 public extension AnyListController where ListView: UITableView {
     func rowHeight(with closour: @escaping (IndexPath, Item) -> CGFloat) {
-        defer { reLink() }
         target(of: .layout, with: TableLayoutTarget.self)?.rowHeightProviding = block(with: closour, defaultValue: 0)
     }
 
     func headerHeight(with closour: @escaping (Int) -> CGFloat) {
-        defer { reLink() }
         target(of: .layout, with: TableLayoutTarget.self)?.headerHeightProviding = closour
     }
     
     func footerHeight(with closour: @escaping (Int) -> CGFloat) {
-        defer { reLink() }
         target(of: .layout, with: TableLayoutTarget.self)?.footerHeightProviding = closour
     }
 }
