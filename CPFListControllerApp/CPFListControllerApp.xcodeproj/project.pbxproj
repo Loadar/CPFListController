@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		1D7D967A6C7BCDA41BC1396A /* Pods_CPFListControllerApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E7AAC6298BB08FE34512727 /* Pods_CPFListControllerApp.framework */; };
+		938495E2273CB44700712987 /* CollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 938495E1273CB44600712987 /* CollectionViewController.swift */; };
+		938495E4273CB45400712987 /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 938495E3273CB45400712987 /* TableViewController.swift */; };
 		93B487B2264FB7EB0065E9FE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93B487B1264FB7EB0065E9FE /* AppDelegate.swift */; };
 		93B487B6264FB7EB0065E9FE /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93B487B5264FB7EB0065E9FE /* ViewController.swift */; };
 		93B487B9264FB7EB0065E9FE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 93B487B7264FB7EB0065E9FE /* Main.storyboard */; };
@@ -58,6 +60,8 @@
 /* Begin PBXFileReference section */
 		2983A2C256BD46CC3883C06A /* Pods-CPFListControllerApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CPFListControllerApp.release.xcconfig"; path = "Target Support Files/Pods-CPFListControllerApp/Pods-CPFListControllerApp.release.xcconfig"; sourceTree = "<group>"; };
 		7E7AAC6298BB08FE34512727 /* Pods_CPFListControllerApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CPFListControllerApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		938495E1273CB44600712987 /* CollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewController.swift; sourceTree = "<group>"; };
+		938495E3273CB45400712987 /* TableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
 		93B487AE264FB7EB0065E9FE /* CPFListControllerApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CPFListControllerApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		93B487B1264FB7EB0065E9FE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		93B487B5264FB7EB0065E9FE /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -179,6 +183,8 @@
 			children = (
 				93B487B1264FB7EB0065E9FE /* AppDelegate.swift */,
 				93B487B5264FB7EB0065E9FE /* ViewController.swift */,
+				938495E1273CB44600712987 /* CollectionViewController.swift */,
+				938495E3273CB45400712987 /* TableViewController.swift */,
 				93B488C526520B7D0065E9FE /* ListController-Bridging-Header.h */,
 				93B487B7264FB7EB0065E9FE /* Main.storyboard */,
 				93B487BA264FB7EE0065E9FE /* Assets.xcassets */,
@@ -545,6 +551,7 @@
 				93B48827264FBB270065E9FE /* ListController.swift in Sources */,
 				93B4881D264FBB270065E9FE /* CollectionSupplementaryTarget.m in Sources */,
 				93B4881C264FBB270065E9FE /* CollectionLayoutTarget.m in Sources */,
+				938495E2273CB44700712987 /* CollectionViewController.swift in Sources */,
 				93B48820264FBB270065E9FE /* CollectionSelectableTarget.m in Sources */,
 				93B4882A264FBB270065E9FE /* ListProxy.m in Sources */,
 				93B4881A264FBB270065E9FE /* CollectionListController.swift in Sources */,
@@ -555,6 +562,7 @@
 				93B487B2264FB7EB0065E9FE /* AppDelegate.swift in Sources */,
 				93B48829264FBB270065E9FE /* CellConfigurer.swift in Sources */,
 				93B4882B264FBB270065E9FE /* AnyListController.swift in Sources */,
+				938495E4273CB45400712987 /* TableViewController.swift in Sources */,
 				93B4882C264FBB270065E9FE /* TableListController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

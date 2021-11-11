@@ -25,8 +25,14 @@ public protocol AnyListController: AnyObject {
     /// Cell配置器列表
     var configurers: [AnyListComponentConfigurer] { set get }
     
-    /// 获取指定feature的target
+    /// 获取指定feature的target, 不存在时自动生成
     func target<T>(of feature: ListFeature, with type: T.Type) -> T?
+    
+    /// 指定feature的target是否存在
+    func isTargetExist(of feature: ListFeature) -> Bool
+    
+    /// 是否需要重新连接dataSource、delegate
+    var shouldReLink: Bool { get set }
 }
 
 public extension AnyListController {
@@ -203,6 +209,19 @@ public extension AnyListController where ListView: UICollectionView {
         listView.dataSource = self as? UICollectionViewDataSource
         listView.delegate = self as? UICollectionViewDelegateFlowLayout
     }
+    
+    private func reLink() {
+        guard let listView = self.listView else { return }
+        guard shouldReLink else { return }
+        defer {
+            shouldReLink = false
+        }
+        listView.dataSource = nil
+        listView.delegate = nil
+        
+        listView.dataSource = self as? UICollectionViewDataSource
+        listView.delegate = self as? UICollectionViewDelegateFlowLayout
+    }
 }
 
 public extension AnyListController where ListView: UITableView {
@@ -212,45 +231,68 @@ public extension AnyListController where ListView: UITableView {
         listView.dataSource = self as? UITableViewDataSource
         listView.delegate = self as? UITableViewDelegate
     }
+    
+    private func reLink() {
+        guard let listView = self.listView else { return }
+        guard shouldReLink else { return }
+        defer {
+            shouldReLink = false
+        }
+        
+        listView.dataSource = nil
+        listView.delegate = nil
+        
+        listView.dataSource = self as? UITableViewDataSource
+        listView.delegate = self as? UITableViewDelegate
+    }
 }
 
 // MARK: - Layout
 public extension AnyListController where ListView: UICollectionView {
     func cellSize(with closour: @escaping (IndexPath, Item) -> CGSize) {
+        defer { reLink() }
         target(of: .layout, with: CollectionLayoutTarget.self)?.cellSizeProviding = block(with: closour,defaultValue: .zero)
     }
     
     func sectionInsets(with closour: @escaping (Int) -> UIEdgeInsets) {
+        defer { reLink() }
         target(of: .layout, with: CollectionLayoutTarget.self)?.sectionInsetsProviding = closour
     }
     
     func lineSpacing(with closour: @escaping (Int) -> CGFloat) {
+        defer { reLink() }
         target(of: .layout, with: CollectionLayoutTarget.self)?.lineSpacingProviding = closour
     }
     
     func interitemSpacing(with closour: @escaping (Int) -> CGFloat) {
+        defer { reLink() }
         target(of: .layout, with: CollectionLayoutTarget.self)?.interitemSpacingProviding = closour
     }
     
     func headerSize(with closour: @escaping (Int) -> CGSize) {
+        defer { reLink() }
         target(of: .layout, with: CollectionLayoutTarget.self)?.headerSizeProviding = closour
     }
     
     func footerSize(with closour: @escaping (Int) -> CGSize) {
+        defer { reLink() }
         target(of: .layout, with: CollectionLayoutTarget.self)?.footerSizeProviding = closour
     }
 }
 
 public extension AnyListController where ListView: UITableView {
     func rowHeight(with closour: @escaping (IndexPath, Item) -> CGFloat) {
+        defer { reLink() }
         target(of: .layout, with: TableLayoutTarget.self)?.rowHeightProviding = block(with: closour, defaultValue: 0)
     }
 
     func headerHeight(with closour: @escaping (Int) -> CGFloat) {
+        defer { reLink() }
         target(of: .layout, with: TableLayoutTarget.self)?.headerHeightProviding = closour
     }
     
     func footerHeight(with closour: @escaping (Int) -> CGFloat) {
+        defer { reLink() }
         target(of: .layout, with: TableLayoutTarget.self)?.footerHeightProviding = closour
     }
 }
@@ -296,7 +338,6 @@ public extension AnyListController where ListView: UIScrollView {
     func viewForZooming(with closour: @escaping (UIScrollView) -> UIView?) {
         target(of: .scrollable, with: AnyScrollableTarget.self)?.viewForZooming = closour
     }
-
 
     func willBeginZooming(with closour: @escaping (UIScrollView, UIView?) -> Void) {
         target(of: .scrollable, with: AnyScrollableTarget.self)?.willBeginZooming = closour

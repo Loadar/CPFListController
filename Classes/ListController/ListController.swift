@@ -13,6 +13,8 @@ public class ListController<Item, ListView>: ListProxy, AnyListController {
     public var itemListProviding: ((Int) -> [Item])?
     public var configurers: [AnyListComponentConfigurer] = []
     
+    public var shouldReLink: Bool = false
+    
     public func target<T>(of feature: ListFeature, with type: T.Type) -> T? {
         if let target = targetInfo[feature] as? T {
             return target
@@ -20,11 +22,16 @@ public class ListController<Item, ListView>: ListProxy, AnyListController {
             if let target = Self.target(of: feature) {
                 targetInfo[feature] = target
                 appendTarget(target)
+                shouldReLink = true
                 return target as? T
             }
             assert(false, "未找到对应的target")
             return nil
         }
+    }
+    
+    public func isTargetExist(of feature: ListFeature) -> Bool {
+        targetInfo[feature] != nil
     }
     
     class func target(of feature: ListFeature) -> AnyObject? {
