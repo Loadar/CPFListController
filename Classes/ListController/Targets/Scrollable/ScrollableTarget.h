@@ -41,6 +41,9 @@ NS_ASSUME_NONNULL_BEGIN
 /// 已结束缩放
 @property (nonatomic, copy, nullable) void (^didEndZooming)(UIScrollView *_Nonnull, UIView *_Nullable, CGFloat);
 
+/// 结束滚动(综合各delegate方法)
+@property (nonatomic, copy, nullable) void (^didEndScrollCompletely)(UIScrollView *_Nonnull);
+
 @end
 
 NS_ASSUME_NONNULL_END

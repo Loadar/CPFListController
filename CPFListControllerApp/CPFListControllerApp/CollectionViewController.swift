@@ -157,7 +157,7 @@ class CollectionViewController: UIViewController {
             .didEndScrollingAnimation { (_) in
                 debugPrint("collection didEndScrollingAnimation")
             }
-            .shouldScrollToTop { (_) in
+            .shouldScrollToTop { (_) -> Bool in
                 debugPrint("collection shouldScrollToTop")
                 return true
             }
@@ -167,7 +167,7 @@ class CollectionViewController: UIViewController {
             .didZoom { (_) in
                 debugPrint("collection didZoom")
             }
-            .viewForZooming { (_) in
+            .viewForZooming { (_) -> UIView? in
                 debugPrint("collection viewForZooming")
                 return nil
             }
@@ -177,10 +177,18 @@ class CollectionViewController: UIViewController {
             .didEndZooming { (_, _, _) in
                 debugPrint("collection didEndZooming")
             }
+            .didEndScrollCompletely { _ in
+                debugPrint("collection didEndScrollCompletely")
+            }
         
         collectionView.cpf
             .columnCount { (section) -> Int in
                 return section + 1
             }
+        
+        DispatchQueue.main.asyncAfter(deadline: .now() + 3) { [weak collectionView] in
+            collectionView?.setContentOffset(CGPoint(x: 0, y: 30), animated: false)
+            
+        }
     }
 }

@@ -60,6 +60,20 @@
     if (self.scrolled != nil) {
         self.scrolled(scrollView);
     }
+    
+    if (self.didEndScrollCompletely != nil && !scrollView.isDragging && !scrollView.isDecelerating) {
+        
+        
+        [NSObject cancelPreviousPerformRequestsWithTarget:self];
+        [self performSelector:@selector(didStopScrolling:) withObject:scrollView afterDelay:0.3];
+    }
+}
+
+// 滚动停止
+- (void)didStopScrolling:(UIScrollView *)scrollView {
+    if (self.didEndScrollCompletely != nil) {
+        self.didEndScrollCompletely(scrollView);
+    }
 }
 
 @end

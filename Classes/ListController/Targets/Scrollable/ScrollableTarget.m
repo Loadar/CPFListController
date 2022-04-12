@@ -51,6 +51,10 @@
     if (self.didEndDragging != nil) {
         self.didEndDragging(scrollView, decelerate);
     }
+    
+    if (self.didEndScrollCompletely != nil && !decelerate) {
+        self.didEndScrollCompletely(scrollView);
+    }
 }
 
 - (void)scrollViewWillBeginDecelerating:(UIScrollView *)scrollView {
@@ -63,11 +67,17 @@
     if (self.didEndDecelerating != nil) {
         self.didEndDecelerating(scrollView);
     }
+    if (self.didEndScrollCompletely != nil) {
+        self.didEndScrollCompletely(scrollView);
+    }
 }
 
 - (void)scrollViewDidEndScrollingAnimation:(UIScrollView *)scrollView {
     if (self.didEndScrollingAnimation != nil) {
         self.didEndScrollingAnimation(scrollView);
+    }
+    if (self.didEndScrollCompletely != nil) {
+        self.didEndScrollCompletely(scrollView);
     }
 }
 
@@ -91,10 +101,11 @@
 }
 
 - (BOOL)scrollViewShouldScrollToTop:(UIScrollView *)scrollView {
+    BOOL toScrollToTop = YES;
     if (self.shouldScrollToTop != nil) {
-        return self.shouldScrollToTop(scrollView);
+        toScrollToTop = self.shouldScrollToTop(scrollView);
     }
-    return true;
+    return toScrollToTop;
 }
 
 - (void)scrollViewDidScrollToTop:(UIScrollView *)scrollView {

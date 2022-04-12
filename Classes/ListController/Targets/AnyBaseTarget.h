@@ -31,6 +31,9 @@
 /// 列表滚动
 @property (nonatomic, copy, nullable) void(^scrolled)(UIScrollView *_Nonnull);
 
+/// 结束滚动(综合各delegate方法)
+@property (nonatomic, copy, nullable) void (^didEndScrollCompletely)(UIScrollView *_Nonnull);
+
 @end
 
 
