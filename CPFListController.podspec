@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name = 'CPFListController'
-  s.version = '1.1.3'
+  s.version = '1.2.0'
   s.summary = '通用的列表控制器'
   s.license = { :type => 'MIT', :file => 'LICENSE' }
   s.author = { 'chenpengfei' => 'afeiafeia@163.com' }
@@ -14,18 +14,18 @@ Pod::Spec.new do |s|
   s.requires_arc = true
   
   s.subspec 'Base' do |subspec|
-      subspec.source_files = 'Classes/ListController/**/*.{h,m,swift}'
-      subspec.exclude_files = 'Classes/ListController/AnyListController+Cpf.swift'
+      subspec.source_files = 'Sources/CPFListController/**/*.{h,m,swift}'
+      subspec.exclude_files = 'Sources/CPFListController/Interface/AnyListController+Cpf.swift'
   end
   
   s.subspec 'Cpf' do |subspec|
-      subspec.source_files = 'Classes/ListController/AnyListController+Cpf.swift'
+      subspec.source_files = 'Sources/CPFListController/Interface/AnyListController+Cpf.swift'
       subspec.dependency 'CPFChain'
       subspec.dependency 'CPFListController/Base'
   end
   
   s.subspec 'WaterfallLayout' do |subspec|
-      subspec.source_files = 'Classes/WaterfallLayout/WaterfallLayout+Cpf.swift'
+      subspec.source_files = 'Sources/CPFListController/WaterfallLayout/WaterfallLayout+Cpf.swift'
       subspec.dependency 'CPFChain'
       subspec.dependency 'CPFListController/Base'
       subspec.dependency 'CPFWaterfallFlowLayout'
