@@ -28,7 +28,7 @@ let package = Package(
             path: "Sources/CPFListController/Interface"),
         .target(
             name: "CPFListController-WaterfallLayout",
-            dependencies: ["CPFListController", "CPFWaterfallFlowLayout"],
+            dependencies: ["CPFChain", "CPFListController-Foundation", "CPFListController", "CPFWaterfallFlowLayout"],
             path: "Sources/CPFListController/WaterfallLayout")
     ]
 )
