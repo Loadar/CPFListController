@@ -7,7 +7,6 @@
 
 import UIKit
 import CPFChain
-import CPFWaterfallFlowLayout
 import CPFListController
 
 class CollectionViewController: UIViewController {
@@ -17,9 +16,9 @@ class CollectionViewController: UIViewController {
         super.viewDidLoad()
         
         let collectionView: UICollectionView = {
-            let layout = WaterfallLayout()
+            let layout = UICollectionViewFlowLayout()
             
-            layout.columnCount = 2
+            //layout.columnCount = 2
             layout.itemSize = CGSize(width: 100, height: 100)
             layout.headerReferenceSize = CGSize(width: 100, height: 40)
             layout.footerReferenceSize = CGSize(width: 100, height: 60)
@@ -182,10 +181,10 @@ class CollectionViewController: UIViewController {
                 debugPrint("collection didEndScrollCompletely")
             }
         
-        collectionView.cpf
-            .columnCount { (section) -> Int in
-                return section + 1
-            }
+//        collectionView.cpf
+//            .columnCount { (section) -> Int in
+//                return section + 1
+//            }
         
         DispatchQueue.main.asyncAfter(deadline: .now() + 3) { [weak collectionView] in
             collectionView?.setContentOffset(CGPoint(x: 0, y: 30), animated: false)
