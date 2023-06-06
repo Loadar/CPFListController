@@ -7,11 +7,11 @@ let package = Package(
     products: [
         .library(
             name: "CPFListController",
-            targets: ["CPFListController", "CPFListController-WaterfallLayout"]),
+            targets: ["CPFListController-WaterfallLayout"]),
         .library(
             name: "CPFListController-Dynamic",
             type: .dynamic,
-            targets: ["CPFListController", "CPFListController-WaterfallLayout"]),
+            targets: ["CPFListController-WaterfallLayout"]),
     ],
     dependencies: [
         .package(url: "https://github.com/Loadar/CPFChain.git", from: Version(stringLiteral: "2.2.3")),
@@ -28,7 +28,7 @@ let package = Package(
             path: "Sources/CPFListController/Interface"),
         .target(
             name: "CPFListController-WaterfallLayout",
-            dependencies: ["CPFChain", "CPFListController-Foundation", "CPFListController", "CPFWaterfallFlowLayout"],
+            dependencies: ["CPFChain", "CPFWaterfallFlowLayout", "CPFListController-Foundation", "CPFListController"],
             path: "Sources/CPFListController/WaterfallLayout")
     ]
 )
