@@ -14,16 +14,20 @@ let package = Package(
             targets: ["CPFListController"]),
     ],
     dependencies: [
-        .package(url: "https://github.com/Loadar/CPFChain.git", from: Version(stringLiteral: "2.2.3")),
+        .package(url: "https://github.com/Loadar/CPFChain.git", from: Version(stringLiteral: "2.2.5")),
     ],
     targets: [
         .target(
             name: "CPFListController-Foundation",
             dependencies: [],
-            path: "Sources/CPFListController/Foundation"),
+            path: "Sources/CPFListController/Foundation",
+            resources: [.copy("../../PrivacyInfo.xcprivacy")]
+        ),
         .target(
             name: "CPFListController",
             dependencies: ["CPFChain", "CPFListController-Foundation"],
-            path: "Sources/CPFListController/Interface"),
+            path: "Sources/CPFListController/Interface",
+            resources: [.copy("../../PrivacyInfo.xcprivacy")]
+        ),
     ]
 )
