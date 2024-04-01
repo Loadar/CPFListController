@@ -6,7 +6,7 @@
 //
 
 import UIKit
-import CPFListController_Foundation
+import CPFListControllerFoundation
 
 public class TableListController<Item>: ListController<Item, UITableView> {
     override class func target(of feature: ListFeature) -> AnyObject? {

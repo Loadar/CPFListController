@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		932EEAC82BBA8CD00024662B /* CPFListControllerDynamic in Frameworks */ = {isa = PBXBuildFile; productRef = 932EEAC72BBA8CD00024662B /* CPFListControllerDynamic */; };
+		932EEAC92BBA8CD00024662B /* CPFListControllerDynamic in Embed Frameworks */ = {isa = PBXBuildFile; productRef = 932EEAC72BBA8CD00024662B /* CPFListControllerDynamic */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
+		932EEACC2BBA8D410024662B /* CPFChainDynamic in Frameworks */ = {isa = PBXBuildFile; productRef = 932EEACB2BBA8D410024662B /* CPFChainDynamic */; };
 		938F4F782A2DCF6D00B8E380 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 938F4F772A2DCF6D00B8E380 /* AppDelegate.swift */; };
 		938F4F7A2A2DCF6D00B8E380 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 938F4F792A2DCF6D00B8E380 /* SceneDelegate.swift */; };
 		938F4F7C2A2DCF6D00B8E380 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 938F4F7B2A2DCF6D00B8E380 /* ViewController.swift */; };
@@ -16,8 +19,6 @@
 		938F4F8D2A2DCF9200B8E380 /* CPFListController.podspec in Resources */ = {isa = PBXBuildFile; fileRef = 938F4F8C2A2DCF9200B8E380 /* CPFListController.podspec */; };
 		938F4F912A2DD20F00B8E380 /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 938F4F902A2DD20F00B8E380 /* TableViewController.swift */; };
 		938F4F932A2DD21400B8E380 /* CollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 938F4F922A2DD21400B8E380 /* CollectionViewController.swift */; };
-		938F4F962A2DD25D00B8E380 /* CPFListController-Dynamic in Frameworks */ = {isa = PBXBuildFile; productRef = 938F4F952A2DD25D00B8E380 /* CPFListController-Dynamic */; };
-		938F4F972A2DD25D00B8E380 /* CPFListController-Dynamic in Embed Frameworks */ = {isa = PBXBuildFile; productRef = 938F4F952A2DD25D00B8E380 /* CPFListController-Dynamic */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -27,7 +28,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				938F4F972A2DD25D00B8E380 /* CPFListController-Dynamic in Embed Frameworks */,
+				932EEAC92BBA8CD00024662B /* CPFListControllerDynamic in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -54,7 +55,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				938F4F962A2DD25D00B8E380 /* CPFListController-Dynamic in Frameworks */,
+				932EEACC2BBA8D410024662B /* CPFChainDynamic in Frameworks */,
+				932EEAC82BBA8CD00024662B /* CPFListControllerDynamic in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -137,7 +139,8 @@
 			);
 			name = Demo;
 			packageProductDependencies = (
-				938F4F952A2DD25D00B8E380 /* CPFListController-Dynamic */,
+				932EEAC72BBA8CD00024662B /* CPFListControllerDynamic */,
+				932EEACB2BBA8D410024662B /* CPFChainDynamic */,
 			);
 			productName = Demo;
 			productReference = 938F4F742A2DCF6D00B8E380 /* Demo.app */;
@@ -151,7 +154,7 @@
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
 				LastSwiftUpdateCheck = 1430;
-				LastUpgradeCheck = 1430;
+				LastUpgradeCheck = 1530;
 				TargetAttributes = {
 					938F4F732A2DCF6D00B8E380 = {
 						CreatedOnToolsVersion = 14.3;
@@ -167,6 +170,9 @@
 				Base,
 			);
 			mainGroup = 938F4F6B2A2DCF6D00B8E380;
+			packageReferences = (
+				932EEACA2BBA8D410024662B /* XCRemoteSwiftPackageReference "CPFChain" */,
+			);
 			productRefGroup = 938F4F752A2DCF6D00B8E380 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -229,6 +235,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
@@ -261,6 +268,7 @@
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -289,6 +297,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
@@ -321,6 +330,7 @@
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
@@ -416,10 +426,26 @@
 		};
 /* End XCConfigurationList section */
 
+/* Begin XCRemoteSwiftPackageReference section */
+		932EEACA2BBA8D410024662B /* XCRemoteSwiftPackageReference "CPFChain" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Loadar/CPFChain";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.2.6;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
 /* Begin XCSwiftPackageProductDependency section */
-		938F4F952A2DD25D00B8E380 /* CPFListController-Dynamic */ = {
+		932EEAC72BBA8CD00024662B /* CPFListControllerDynamic */ = {
 			isa = XCSwiftPackageProductDependency;
-			productName = "CPFListController-Dynamic";
+			productName = CPFListControllerDynamic;
+		};
+		932EEACB2BBA8D410024662B /* CPFChainDynamic */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 932EEACA2BBA8D410024662B /* XCRemoteSwiftPackageReference "CPFChain" */;
+			productName = CPFChainDynamic;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

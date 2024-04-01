@@ -6,7 +6,7 @@
 //
 
 import Foundation
-import CPFListController_Foundation
+import CPFListControllerFoundation
 
 public class ListController<Item, ListView>: ListProxy, AnyListController {
 

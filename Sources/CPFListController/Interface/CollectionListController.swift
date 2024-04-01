@@ -6,7 +6,7 @@
 //
 
 import UIKit
-import CPFListController_Foundation
+import CPFListControllerFoundation
 
 public class CollectionListController<Item>: ListController<Item, UICollectionView> {
     override class func target(of feature: ListFeature) -> AnyObject? {

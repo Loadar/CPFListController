@@ -6,7 +6,7 @@
 //
 
 import UIKit
-import CPFListController_Foundation
+import CPFListControllerFoundation
 
 /// 列表controller顶层协议
 public protocol AnyListController: AnyObject {
