@@ -10,6 +10,7 @@
 		932EEAC82BBA8CD00024662B /* CPFListControllerDynamic in Frameworks */ = {isa = PBXBuildFile; productRef = 932EEAC72BBA8CD00024662B /* CPFListControllerDynamic */; };
 		932EEAC92BBA8CD00024662B /* CPFListControllerDynamic in Embed Frameworks */ = {isa = PBXBuildFile; productRef = 932EEAC72BBA8CD00024662B /* CPFListControllerDynamic */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 		932EEACC2BBA8D410024662B /* CPFChainDynamic in Frameworks */ = {isa = PBXBuildFile; productRef = 932EEACB2BBA8D410024662B /* CPFChainDynamic */; };
+		9370052D2CB68190009E4936 /* CPFChainDynamic in Embed Frameworks */ = {isa = PBXBuildFile; productRef = 932EEACB2BBA8D410024662B /* CPFChainDynamic */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 		938F4F782A2DCF6D00B8E380 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 938F4F772A2DCF6D00B8E380 /* AppDelegate.swift */; };
 		938F4F7A2A2DCF6D00B8E380 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 938F4F792A2DCF6D00B8E380 /* SceneDelegate.swift */; };
 		938F4F7C2A2DCF6D00B8E380 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 938F4F7B2A2DCF6D00B8E380 /* ViewController.swift */; };
@@ -28,6 +29,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
+				9370052D2CB68190009E4936 /* CPFChainDynamic in Embed Frameworks */,
 				932EEAC92BBA8CD00024662B /* CPFListControllerDynamic in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
@@ -356,6 +358,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 628CHGGHXP;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Demo/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -363,6 +366,7 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.6;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -383,6 +387,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 628CHGGHXP;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Demo/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -390,6 +395,7 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.6;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -432,7 +438,7 @@
 			repositoryURL = "https://github.com/Loadar/CPFChain";
 			requirement = {
 				kind = upToNextMajorVersion;
-				minimumVersion = 2.2.6;
+				minimumVersion = 2.2.7;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */

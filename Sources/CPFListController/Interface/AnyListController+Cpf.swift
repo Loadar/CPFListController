@@ -401,4 +401,4 @@ public extension Cpf where Wrapped: AnyListController, Wrapped.ListView: UIScrol
     }
 }
 
-extension NSProxy: CpfCompatible {}
+extension NSProxy: @retroactive CpfCompatible {}
